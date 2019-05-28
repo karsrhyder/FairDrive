@@ -1,18 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,700");
 
-
-
 :root {
   --border-line: #222222;
   --bg-dark: #222222;
   --bg-shade: #333333;
   --text-light: white;
-  --text-title: #FFCA28;
+  --text-title: #efd96f;
   --text-shade: #FFA000;
+  --fds-yellow: #efd96f;
+  --fds-blue: #24b1ff;
+  --fds-dark: #333333;
+}
+
+.baseShadow {
+  box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
 }
 
 a {
   text-decoration: none !important;
+}
+.mainTitle1 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: 36px;
 }
 
 .mainTitle2 {
@@ -88,14 +103,65 @@ a {
     composes: mainTitle2;
   }
 
+  .h1 {
+    composes: mainTitle4;
+    color: var(--text-light);
+  }
+
   .breadcrumbpath {
     composes: bodyBold;
-    color: #444444;
+    color: #cecece !important;
   }
 
   .innercontainer {
     margin-top: 140px;
     overflow: scroll;
+    background-color: var(--bg-dark);
+  }
+
+  .register {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px 40px 20px 40px;
+    width: 100vw;
+  }
+
+  .innercontainer input {
+    font-family: Montserrat;
+    font-size: 14px;
+    color: white;
+    width: 75vw;
+    min-width: 200px;
+    max-width: 300px;
+    margin-top: 16px;
+    background-color: none;
+    border-bottom: 1px solid var(--bg-shade);
+    background: transparent;
+    border-top: transparent !important;
+    border-left: transparent !important;
+    border-right: transparent !important;
+  }
+
+  .button {
+    composes: bodyBold;
+    composes: baseShadow;
+    width: 75vw;
+    color: var(--fds-blue);
+    min-width: 200px;
+    max-width: 300px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px 42px;
+    border-radius: 2px;
+    cursor: pointer;
+    max-height: 62px;
+    margin-top: 20px;
+    border: 1px solid var(--fds-blue);
+  }
+
+  .innercontainer input:focus {
+    outline: none;
   }
 
   .rowfile {

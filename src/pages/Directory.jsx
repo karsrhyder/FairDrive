@@ -12,27 +12,32 @@ import {
 class Directory extends React.Component {
   render() {
     return (
-  <div className={styles.container}>
-    <div className={styles.topbar}>
-      <div className={styles.breadcrumb}> {this.props.directory}</div>
-      <div className={styles.breadcrumbpath}>
-        Back to 
-        FairDrive /</div>
-        <i className={styles.flaticon}>abcdefg</i>
-    </div>
-    <div className={styles.innercontainer}>
-            {this.props.directories.map(item => (
-               <NavLink to={item} key={item}>
-                 <div className={styles.directoryrow}>
-                 <div className={styles.icons8folder}></div>
-                 <RowFile name={item} />
-                 </div>
-               </NavLink>
-            ))}
-    </div> 
-    </div>
+      <div className={styles.container}>
+        <div className={styles.topbar}>
+          <div className={styles.breadcrumb}> {this.props.directory}</div>
+
+          <NavLink to="/">
+            <div className={styles.breadcrumbpath}>
+              Back to
+              FairDrive /
+        </div>
+          </NavLink>
+
+        </div>
+        <div className={styles.innercontainer}>
+          {this.props.directories.map(item => (
+            <NavLink to={"d/" + item} key={item}>
+              <div className={styles.directoryrow}>
+                <div className={styles.icons8folder}></div>
+                <RowFile name={item} />
+              </div>
+            </NavLink>
+          ))}
+        </div>
+      </div>
     );
-  }}
+  }
+}
 
 const mapStateToProps = (_, ownProps) => {
   const { directory } = (ownProps.match || {}).params || {};

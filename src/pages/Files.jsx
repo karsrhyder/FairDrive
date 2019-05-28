@@ -19,7 +19,7 @@ class Files extends React.Component {
     <div className={styles.innercontainer}>
      
             {this.props.directories.map(item => (
-               <NavLink to={item}>
+               <NavLink to={"d/" + item}>
                  <div className={styles.directoryrow}>
                  <div className={styles.icons8folder}></div>
                  <RowFile name={item} />
