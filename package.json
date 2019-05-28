@@ -1,0 +1,39 @@
+{
+  "name": "fair-drive",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "fds.js": "^0.0.15",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "redux-saga": "^1.0.2",
+    "redux-starter-kit": "^0.4.3",
+    "redux": "^4.0.1",
+    "reselect": "^4.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
