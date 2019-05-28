@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,700");
 
+
+
 :root {
   --border-line: #222222;
   --bg-dark: #222222;
@@ -86,6 +88,11 @@ a {
     composes: mainTitle2;
   }
 
+  .breadcrumbpath {
+    composes: bodyBold;
+    color: #444444;
+  }
+
   .innercontainer {
     margin-top: 140px;
     overflow: scroll;
@@ -112,8 +119,28 @@ a {
     flex-direction: row;
     align-items: center;
     justify-items: flex-start;
-    padding: 40px;
+    padding: 20px 40px 20px 40px;
     background-color: var(--bg-shade);
     border-bottom: 1px solid var(--border-line);
-
   }
+
+  .flaticon::before {
+    font-family: 'Flaticons Solid';
+    content: "\E5B3";
+} 
+
+@font-face {
+  font-family: 'Flaticons Solid';
+  src: url(/fonts/flaticons-solid.eot);
+  src: url(/fonts/flaticons-solid.eot?#iefix) format("embedded-opentype"),url(/fonts/flaticons-solid.woff) format('woff'),url(/fonts/flaticons-solid.ttf) format('truetype'),url(/fonts/flaticons-solid.svg#flaticons-solid) format('svg');
+  font-weight: 400;
+  font-style: normal
+}
+
+.flaticon.solid:before {
+  font-family: 'Flaticons Solid'
+}
+
+.flaticon.solid.A1:before,.flaticon.solid.grid-1:before,.flaticon.solid.grid:before {
+  content: "\E000"
+}

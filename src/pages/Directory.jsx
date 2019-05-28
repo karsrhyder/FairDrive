@@ -9,33 +9,38 @@ import {
   getDirectories
 } from "../services/filebrowser/selectors";
 
-class Files extends React.Component {
+class Directory extends React.Component {
   render() {
     return (
   <div className={styles.container}>
     <div className={styles.topbar}>
-      <div className={styles.breadcrumb}>FairDrive / </div>
+      <div className={styles.breadcrumb}> {this.props.directory}</div>
+      <div className={styles.breadcrumbpath}>
+        Back to 
+        FairDrive /</div>
+        <i className={styles.flaticon}>abcdefg</i>
     </div>
     <div className={styles.innercontainer}>
-     
             {this.props.directories.map(item => (
-               <NavLink to={item}>
+               <NavLink to={item} key={item}>
                  <div className={styles.directoryrow}>
                  <div className={styles.icons8folder}></div>
                  <RowFile name={item} />
                  </div>
                </NavLink>
-              
             ))}
     </div> 
     </div>
     );
   }}
 
-
-const mapStateToProps = createStructuredSelector({
-  directories: getDirectories
-});
+const mapStateToProps = (_, ownProps) => {
+  const { directory } = (ownProps.match || {}).params || {};
+  return createStructuredSelector({
+    directory: () => directory,
+    directories: state => getDirectories(state, directory),
+  });
+};
 
 const mapDispatchToProps = dispatch => ({
   //addHashtag: name => dispatch({ type: "ADD_HASHTAG", hashtag: { name } })
@@ -44,5 +49,5 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Files);
+)(Directory);
 
