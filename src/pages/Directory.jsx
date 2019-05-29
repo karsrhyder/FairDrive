@@ -16,10 +16,10 @@ class Directory extends React.Component {
         <div className={styles.topbar}>
           <div className={styles.breadcrumb}> {this.props.directory}</div>
 
-          <NavLink to="/">
+          <NavLink to="/f">
             <div className={styles.breadcrumbpath}>
               Back to
-              FairDrive /
+              SwarmDrive /
         </div>
           </NavLink>
 

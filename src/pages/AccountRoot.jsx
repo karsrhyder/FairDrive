@@ -8,7 +8,7 @@ class Account extends React.Component {
         return (
             <div className={styles.container}>
                 <div className={styles.topbar}>
-                    <div className={styles.breadcrumb}>FairDrive / </div>
+                    <div className={styles.breadcrumb}>SwarmDrive / </div>
                     {/* <div className={styles.breadcrumbpath}>
         by Fair Data Society
         </div> */}
@@ -16,17 +16,21 @@ class Account extends React.Component {
                 </div>
                 <div className={styles.innercontainer}>
                     <div className={styles.register}>
-                        <div className={styles.breadcrumbpath}>Unlock</div>
-                        <input type="text" placeholder="Email"></input>
+                        <div className={styles.breadcrumbpath}>Login</div>
+                        <input type="text" placeholder="Handle"></input>
                         <input type="password" placeholder="Password"></input>
-                        <div className={styles.button}>Unlock</div>
+                        <NavLink to="/f">
+                            <div className={styles.button}>Unlock</div>
+                        </NavLink>
                     </div>
                     <div className={styles.register}>
-                        <div className={styles.breadcrumbpath}>Register</div>
-                        <input type="text" placeholder="Email"></input>
+                        <NavLink to="/register" className={styles.createnew}>
+                            <div>Register New SwarmDrive</div>
+                            {/* <input type="text" placeholder="Email"></input>
                         <input type="password" placeholder="Password"></input>
                         <input type="password" placeholder="Password again"></input>
-                        <div className={styles.button}>Register</div>
+                        <div className={styles.button}>Register</div> */}
+                        </NavLink>
                     </div>
                 </div>
             </div>

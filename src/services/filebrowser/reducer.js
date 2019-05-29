@@ -4,13 +4,16 @@ import { assertAction } from "../utilities";
 // Service > user
 const initialState = {
   directories: [
+    "DappData", 
+
   "Documents", 
   "Images", 
+    "KeyData", 
+      "Magnet", 
+
+    "Movies", 
+
   "Music", 
-  "Movies", 
-  "DappData", 
-  "KeyData", 
-  "Magnet", 
   "Photos"
 ]
 };

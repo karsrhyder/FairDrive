@@ -13,10 +13,10 @@
 }
 
 .baseShadow {
-  box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
+  -o-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
 }
 
 a {
@@ -111,9 +111,16 @@ a {
   .breadcrumbpath {
     composes: bodyBold;
     color: #cecece !important;
+    line-height: 36px;
   }
 
   .innercontainer {
+    margin-top: 140px;
+    overflow: scroll;
+    background-color: var(--bg-dark);
+  }
+
+  .logincontainer {
     margin-top: 140px;
     overflow: scroll;
     background-color: var(--bg-dark);
@@ -125,6 +132,15 @@ a {
     box-sizing: border-box;
     padding: 20px 40px 20px 40px;
     width: 100vw;
+  }
+
+  .createnew {
+    composes: bodyBold;
+    color: var(--fds-dark) !important;
+  }
+
+  .createnew :hover {
+    color: var(--fds-blue) !important;
   }
 
   .innercontainer input {
@@ -141,6 +157,12 @@ a {
     border-top: transparent !important;
     border-left: transparent !important;
     border-right: transparent !important;
+    line-height: 26px;
+  }
+
+  .innercontainer input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--fds-blue);
   }
 
   .button {
@@ -158,10 +180,13 @@ a {
     max-height: 62px;
     margin-top: 20px;
     border: 1px solid var(--fds-blue);
+    margin-top: 50px;
   }
 
-  .innercontainer input:focus {
-    outline: none;
+  .button :hover {
+    border: 1px solid var(--fds-yellow);
+    color: var(--fds-yellow);
+
   }
 
   .rowfile {
@@ -186,8 +211,8 @@ a {
     align-items: center;
     justify-items: flex-start;
     padding: 20px 40px 20px 40px;
-    background-color: var(--bg-shade);
-    border-bottom: 1px solid var(--border-line);
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid var(--bg-shade);
   }
 
   .flaticon::before {
