@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import RowFile from "../components/RowFile";
+import DefaultAvatar from "../images/defaultAvatar.png";
 
 import {
   getDirectories
@@ -14,7 +15,16 @@ class Directory extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.topbar}>
-          <div className={styles.breadcrumb}> {this.props.directory}</div>
+          <NavLink to="/">
+            <div className={styles.myaccount}>
+              <img className={styles.avatar} src={DefaultAvatar} />
+              <div className={styles.handlebalance}>
+                <div className={styles.handle}>KarsRhyder</div>
+                <div className={styles.balance}>124.21 SWT</div>
+              </div>
+            </div>
+          </NavLink>
+          <div className={styles.breadcrumb}>{this.props.directory}</div>
 
           <NavLink to="/f">
             <div className={styles.breadcrumbpath}>
@@ -29,7 +39,7 @@ class Directory extends React.Component {
             <NavLink to={"d/" + item} key={item}>
               <div className={styles.directoryrow}>
                 <div className={styles.icons8folder}></div>
-                <RowFile name={item} />
+                <RowFile item={item} />
               </div>
             </NavLink>
           ))}

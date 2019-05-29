@@ -2,20 +2,22 @@ import { combineReducers } from "redux";
 import services from "./services";
 
 const initialState = {
-  hashtags: [
-    { name: "GetSWT", completed: 4 },
-    { name: "CommsTasks", completed: 2 },
-    { name: "Serendipity", completed: 2 },
-    { name: "SC-Support", completed: 1 }
+  directories: [
+    { name: "DappData", weight: 2.3 },
+    { name: "Documents", weight: 45.1 },
+    { name: "Images", weight: 1.21 },
+    { name: "Music", weight: 120.3 },
+    { name: "Movies", weight: 1.3 },
+    { name: "KeyData", weight: 3.12 }
   ]
 };
 
 const globalReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_HASHTAG":
+    case "ADD_DIRECTORY":
       return {
         ...state,
-        hashtags: [...state.hashtags, action.hashtag]
+        directories: [...state.directories, action.directories]
       };
 
     default:

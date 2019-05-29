@@ -3,7 +3,7 @@ import styles from "../styles.module.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
-class Account extends React.Component {
+class Register extends React.Component {
     render() {
         return (
             <div className={styles.container}>
@@ -16,14 +16,15 @@ class Account extends React.Component {
                 </div>
                 <div className={styles.innercontainer}>
                     <div className={styles.register}>
-                        <div className={styles.breadcrumbpath}>Login</div>
+                        <div className={styles.breadcrumbpath}>Register</div>
                         <input type="text" placeholder="Handle"></input>
                         <input type="password" placeholder="Password"></input>
+                        <input type="password" placeholder="Password check"></input>
                         <NavLink to="/f">
-                            <div className={styles.button}>Unlock</div>
+                            <div className={styles.button}>Register</div>
                         </NavLink>
-                        <NavLink to="/r" className={styles.createnew}>
-                            <div>Create new SwarmDrive</div>
+                        <NavLink to="/" className={styles.createnew}>
+                            <div>Unlock SwarmDrive</div>
                         </NavLink>
                     </div>
                 </div>
@@ -47,5 +48,5 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Account);
+)(Register);
 
