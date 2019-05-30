@@ -8,6 +8,10 @@ const initialState = {
     { name: "Images", weight: 1.21 },
     { name: "Music", weight: 120.3 },
     { name: "Movies", weight: 1.3 },
+    { name: "KeyData", weight: 3.12 },
+    { name: "KeyData", weight: 3.12 },
+    { name: "KeyData", weight: 3.12 },
+    { name: "KeyData", weight: 3.12 },
     { name: "KeyData", weight: 3.12 }
   ]
 };
