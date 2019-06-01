@@ -1,14 +1,12 @@
 import React from "react";
-import styles from "../styles.module.css";
+import styles from "styles.module.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import RowFile from "../components/RowFile";
-import DefaultAvatar from "../images/defaultAvatar.png";
+import RowFile from "components/RowFile";
+import DefaultAvatar from "images/defaultAvatar.png";
 
-import {
-  getDirectories
-} from "../services/filebrowser/selectors";
+import { getDirectories } from "services/filebrowser/selectors";
 
 class Directory extends React.Component {
   render() {
@@ -27,18 +25,14 @@ class Directory extends React.Component {
           <div className={styles.breadcrumb}>{this.props.directory}</div>
 
           <NavLink to="/f">
-            <div className={styles.breadcrumbpath}>
-              Back to
-              SwarmDrive /
-        </div>
+            <div className={styles.breadcrumbpath}>Back to FairDrive /</div>
           </NavLink>
-
         </div>
         <div className={styles.innercontainer}>
           {this.props.directories.map(item => (
             <NavLink to={"d/" + item} key={item}>
               <div className={styles.directoryrow}>
-                <div className={styles.icons8folder}></div>
+                <div className={styles.icons8folder} />
                 <RowFile item={item} />
               </div>
             </NavLink>
@@ -53,7 +47,7 @@ const mapStateToProps = (_, ownProps) => {
   const { directory } = (ownProps.match || {}).params || {};
   return createStructuredSelector({
     directory: () => directory,
-    directories: state => getDirectories(state, directory),
+    directories: state => getDirectories(state, directory)
   });
 };
 
@@ -65,4 +59,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Directory);
-

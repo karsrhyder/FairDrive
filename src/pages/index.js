@@ -1,8 +1,8 @@
-import Files from "./Files";
-import Directory from "./Directory";
-import Account from "./AccountRoot";
-import Register from "./RegisterRoot";
-import Wallet from "./WalletRoot";
+import Files from "./Files/Files";
+import Directory from "./Files/Directory";
+import Account from "./Account/AccountRoot";
+import Register from "./Account/RegisterRoot";
+import Wallet from "./Account/WalletRoot";
 
 export default [
   { path: "/", exact: true, component: Account },

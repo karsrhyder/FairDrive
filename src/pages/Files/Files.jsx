@@ -1,13 +1,11 @@
 import React from "react";
-import styles from "../styles.module.css";
+import styles from "styles.module.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import RowFile from "../components/RowFile";
-import DefaultAvatar from "../images/defaultAvatar.png";
-import {
-  getDirectories
-} from "../services/filebrowser/selectors";
+import RowFile from "components/RowFile";
+import DefaultAvatar from "images/defaultAvatar.png";
+import { getDirectories } from "services/filebrowser/selectors";
 
 class Files extends React.Component {
   render() {
@@ -23,17 +21,14 @@ class Files extends React.Component {
               </div>
             </div>
           </NavLink>
-          <div className={styles.breadcrumb}>SwarmDrive / </div>
-          <div className={styles.breadcrumbpath}>
-            ~122GB
-        </div>
+          <div className={styles.breadcrumb}>FairDrive / </div>
+          <div className={styles.breadcrumbpath}>~122GB</div>
         </div>
         <div className={styles.innercontainer}>
-
           {this.props.directories.map(item => (
             <NavLink to={"d/" + item.name}>
               <div className={styles.directoryrow}>
-                <div className={styles.icons8folder}></div>
+                <div className={styles.icons8folder} />
                 <RowFile item={item} />
               </div>
             </NavLink>
@@ -43,7 +38,6 @@ class Files extends React.Component {
     );
   }
 }
-
 
 const mapStateToProps = createStructuredSelector({
   directories: getDirectories
@@ -57,4 +51,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Files);
-
