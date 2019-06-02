@@ -2,17 +2,28 @@ import { combineReducers } from "redux";
 import services from "./services";
 
 const initialState = {
-  directories: [
-    { name: "DappData", weight: 2.3 },
-    { name: "Documents", weight: 45.1 },
-    { name: "Images", weight: 1.21 },
-    { name: "Music", weight: 120.3 },
-    { name: "Movies", weight: 1.3 },
-    { name: "KeyData", weight: 3.12 },
-    { name: "KeyData", weight: 3.12 },
-    { name: "KeyData", weight: 3.12 },
-    { name: "KeyData", weight: 3.12 },
-    { name: "KeyData", weight: 3.12 }
+  directories: {
+    '0x1': {
+      dirName: 'DappData',
+      metaHash: '0x...',
+      items: {
+        '0': {
+          itemName: 'File 1.jpg',
+          fileSize: 12233,
+          mimeType: 'JPEG'
+        }
+      }
+    }
+  },
+  directoryList: [
+    {
+      dirName: 'DappData',
+      metaHash: '0x...'
+    },
+    {
+      dirName: 'Images',
+      metaHash: '0x...'
+    }
   ]
 };
 

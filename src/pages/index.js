@@ -9,5 +9,5 @@ export default [
   { path: "/f", exact: true, component: Files },
   { path: "/r", exact: true, component: Register },
   { path: "/w", exact: true, component: Wallet },
-  { path: "/d/:directory", component: Directory }
+  { path: "/d/:dirId", component: Directory }
 ];

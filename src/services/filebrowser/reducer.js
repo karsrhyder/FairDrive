@@ -1,21 +1,42 @@
 import * as t from "./actionTypes";
-import { assertAction } from "../utilities";
 
 // Service > Directories
 const initialState = {
-  directories: [
-    { name: "DappData", weight: 2.3 },
-    { name: "Documents", weight: 45.1 },
-    { name: "Images", weight: 1.21 },
-    { name: "Music", weight: 120.3 },
-    { name: "Movies", weight: 1.3 },
-    { name: "KeyData", weight: 3.12 },
-    { name: "DappData", weight: 2.3 },
-    { name: "Documents", weight: 45.1 },
-    { name: "Images", weight: 1.21 },
-    { name: "Music", weight: 120.3 },
-    { name: "Movies", weight: 1.3 },
-    { name: "KeyData", weight: 3.12 }
+  directories: {
+    '0x1': {
+      dirName: 'DappData',
+      metaHash: '0x...',
+      items: {
+        '0': {
+          itemName: 'File 1.jpg',
+          fileSize: 12233,
+          mimeType: 'JPEG'
+        }
+      }
+    },
+    '0x2': {
+      dirName: 'Images',
+      metaHash: '0x...',
+      items: {
+        '0': {
+          itemName: 'File 2.jpg',
+          fileSize: 12233,
+          mimeType: 'JPEG'
+        }
+      }
+    }
+  },
+  directoryList: [
+    {
+      dirId: '0x1',
+      dirName: 'DappData',
+      metaHash: '0x...'
+    },
+    {
+      dirId: '0x2',
+      dirName: 'Images',
+      metaHash: '0x...'
+    }
   ]
 };
 

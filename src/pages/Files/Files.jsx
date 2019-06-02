@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import RowFile from "components/RowFile";
-import DefaultAvatar from "images/defaultAvatar.png";
-import { getDirectories } from "services/filebrowser/selectors";
+import PropTypes from "prop-types";
+import { getDirectoryList } from "services/filebrowser/selectors";
 
 class Files extends React.Component {
   render() {
@@ -24,8 +24,8 @@ class Files extends React.Component {
           <div className={styles.breadcrumbpath}>~122GB</div>
         </div>
         <div className={styles.innercontainer}>
-          {this.props.directories.map(item => (
-            <NavLink to={"d/" + item.name}>
+          {this.props.directoryList.map(item => (
+            <NavLink to={"d/" + item.dirId}>
               <div className={styles.directoryrow}>
                 <div className={styles.icons8folder} />
                 <RowFile item={item} />
@@ -36,10 +36,18 @@ class Files extends React.Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    console.log('mount', this.props.directories);
+  }
 }
 
+Files.propTypes = {
+  directories: PropTypes.array.isRequired
+};
+
 const mapStateToProps = createStructuredSelector({
-  directories: getDirectories
+  directoryList: getDirectoryList
 });
 
 const mapDispatchToProps = dispatch => ({

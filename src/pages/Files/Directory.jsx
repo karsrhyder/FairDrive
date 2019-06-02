@@ -3,10 +3,11 @@ import styles from "styles.module.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import RowFile from "components/RowFile";
-import DefaultAvatar from "images/defaultAvatar.png";
+import FileItem from "components/FileItem";
+import PropTypes from "prop-types";
 
-import { getDirectories } from "services/filebrowser/selectors";
+
+import { getItemsByDirectoryId, getDirNameByDirId } from "services/filebrowser/selectors";
 
 class Directory extends React.Component {
   render() {
@@ -21,18 +22,18 @@ class Directory extends React.Component {
               </div>
             </div>
           </NavLink>
-          <div className={styles.breadcrumb}>{this.props.directory}</div>
+          <div className={styles.breadcrumb}>{this.props.dirName}</div>
 
           <NavLink to="/f">
             <div className={styles.breadcrumbpath}>Back to FairDrive /</div>
           </NavLink>
         </div>
         <div className={styles.innercontainer}>
-          {this.props.directories.map(item => (
-            <NavLink to={"d/" + item} key={item}>
+          {this.props.files.map(item => (
+            <NavLink to={"d/" + item.itemName} key={item.itemName}>
               <div className={styles.directoryrow}>
                 <div className={styles.icons8folder} />
-                <RowFile item={item} />
+                <FileItem item={item} />
               </div>
             </NavLink>
           ))}
@@ -40,13 +41,23 @@ class Directory extends React.Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    console.log('mount', this.props.files);
+  }
 }
 
+Directory.propTypes = {
+  files: PropTypes.array.isRequired
+};
+
 const mapStateToProps = (_, ownProps) => {
-  const { directory } = (ownProps.match || {}).params || {};
+  const { dirId } = (ownProps.match || {}).params || {};
+  console.log(dirId);
   return createStructuredSelector({
-    directory: () => directory,
-    directories: state => getDirectories(state, directory)
+    dirId: () => dirId,
+    files: state => getItemsByDirectoryId(state, dirId),
+    dirName: state => getDirNameByDirId(state, dirId)
   });
 };
 

@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "../styles.module.css";
 
-export default class RowFile extends React.Component {
+export default class FileItem extends React.Component {
   componentWillMount() { }
   componentHasMounted() { }
   render() {
-    return <div className={styles.rowfile}>{this.props.item.dirName}</div>;
+    return <div className={styles.rowfile}>{this.props.item.itemName}</div>;
   }
 }
