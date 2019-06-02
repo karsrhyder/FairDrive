@@ -8,14 +8,14 @@ class Register extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.topbar}>
-          <div className={styles.breadcrumb}>FairDrive / </div>
+          <div className={styles.brand}>FairDrive / </div>
           {/* <div className={styles.breadcrumbpath}>
         by Fair Data Society
         </div> */}
         </div>
         <div className={styles.innercontainer}>
           <div className={styles.register}>
-            <div className={styles.breadcrumbpath}>Register</div>
+            <div className={styles.loginregistertitle}>Register</div>
             <input type="text" placeholder="Handle" />
             <input type="password" placeholder="Password" />
             <input type="password" placeholder="Password check" />

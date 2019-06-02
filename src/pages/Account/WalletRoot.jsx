@@ -4,43 +4,42 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
 class Wallet extends React.Component {
-    render() {
-        return (
-            <div className={styles.container}>
-                <div className={styles.topbar}>
+  render() {
+    return (
+      <div className={styles.container}>
+        <div className={styles.topbar} />
+        <div className={styles.innercontainer}>
+          <div className={styles.register}>
+            <div className={styles.bigbalance}>132.33 FDT</div>
+            <div className={styles.address}>0x...</div>
 
-                </div>
-                <div className={styles.innercontainer}>
-                    <div className={styles.register}>
-                        <div className={styles.breadcrumb}>132.33</div>
-                        <div className={styles.breadcrumbpath}>Send</div>
-                        <input type="text" placeholder="0x..."></input>
-                        <input type="text" placeholder="Amount"></input>
-                        <NavLink to="/f">
-                            <div className={styles.button}>Send</div>
-                        </NavLink>
-
-                    </div>
-                </div>
-            </div>
-        )
-    }
-};
+            <div className={styles.space} />
+            <div className={styles.breadcrumbpath}>Send Fair Data Token</div>
+            <input type="text" placeholder="0x..." />
+            <input type="number" placeholder="Amount" />
+            <NavLink to="/f">
+              <div className={styles.button}>Send</div>
+            </NavLink>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = (_, ownProps) => {
-    const { directory } = (ownProps.match || {}).params || {};
-    // return createStructuredSelector({
-    //   directory: () => directory,
-    //   directories: state => getDirectories(state, directory),
-    // });
+  const { directory } = (ownProps.match || {}).params || {};
+  // return createStructuredSelector({
+  //   directory: () => directory,
+  //   directories: state => getDirectories(state, directory),
+  // });
 };
 
 const mapDispatchToProps = dispatch => ({
-    //addHashtag: name => dispatch({ type: "ADD_HASHTAG", hashtag: { name } })
+  //addHashtag: name => dispatch({ type: "ADD_HASHTAG", hashtag: { name } })
 });
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Wallet);
-

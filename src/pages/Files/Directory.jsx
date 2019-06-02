@@ -13,12 +13,11 @@ class Directory extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.topbar}>
-          <NavLink to="/">
+          <NavLink to="/w">
             <div className={styles.myaccount}>
-              <img className={styles.avatar} src={DefaultAvatar} />
               <div className={styles.handlebalance}>
                 <div className={styles.handle}>KarsRhyder</div>
-                <div className={styles.balance}>124.21 SWT</div>
+                <div className={styles.balance}>124.21 FDT</div>
               </div>
             </div>
           </NavLink>

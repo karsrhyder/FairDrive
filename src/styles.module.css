@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,700");
 
 :root {
---border-line: #222222;
---bg-dark: #222222;
---bg-shade: #333333;
---text-light: white;
---text-title: #efd96f;
---text-shade: #FFA000;
---fds-yellow: #efd96f;
---fds-blue: #24b1ff;
---fds-dark: #333333;
+  --border-line: #222222;
+  --bg-dark: #222222;
+  --bg-shade: #333333;
+  --text-light: white;
+  --text-title: #efd96f;
+  --text-shade: #ffa000;
+  --fds-yellow: #efd96f;
+  --fds-blue: #24b1ff;
+  --fds-dark: #333333;
 }
 
 body {
@@ -17,65 +17,65 @@ body {
 }
 
 .baseShadow {
-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
--webkit-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
--moz-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
--o-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
+  -o-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.8);
 }
 
 a {
-text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .mainTitle1 {
-font-family: Montserrat, sans-serif;
-font-weight: 800;
-font-size: 28px;
-letter-spacing: 0;
-line-height: 36px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: 36px;
 }
 
 .mainTitle2 {
-font-family: Montserrat, sans-serif;
-font-weight: 800;
-font-size: 28px;
-letter-spacing: 0;
-line-height: 36px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: 36px;
 }
 .mainTitle3 {
-font-family: Montserrat, sans-serif;
-font-weight: 800;
-font-size: 26px;
-letter-spacing: 0px;
-line-height: 32px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: 0px;
+  line-height: 32px;
 }
 .mainTitle4 {
-font-family: Montserrat, sans-serif;
-font-weight: 800;
-font-size: 22px;
-letter-spacing: 0;
-line-height: 27px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: 27px;
 }
 .bodyDefault {
-font-family: Montserrat, sans-serif;
-font-weight: 200;
-font-size: 16px;
-letter-spacing: 0;
-line-height: 19px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
 }
 .bodyBold {
-font-family: Montserrat, sans-serif;
-font-weight: 800;
-font-size: 16px;
-letter-spacing: 0;
-line-height: 19px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
 }
 .bodyDetail {
-font-family: Montserrat, sans-serif;
-font-weight: 200;
-font-size: 20px;
-letter-spacing: 0;
-line-height: 24px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 24px;
 }
 
 .smallLight {
@@ -113,7 +113,6 @@ line-height: 24px;
   height: 100vh;
   margin: 0;
   padding: 0;
-  scroll-behavior: auto;
   background-color: #333333;
 }
 
@@ -126,17 +125,29 @@ line-height: 24px;
 .topbar {
   position: fixed;
   top: 0px;
-  height: 120px;
-  padding: 30px 40px 20px 40px;
+  height: 25vh;
   background-color: var(--bg-dark);
   color: var(--text-title);
   width: 100vw;
   background-color: var(--bg-dark);
 }
 
+.brand {
+  composes: mainTitle2;
+  margin-left: 40px;
+  margin-top: 120px;
+}
+
+.loginregistertitle {
+  composes: bodyBold;
+  color: #cecece !important;
+  line-height: 36px;
+}
+
 /* Files */
 .breadcrumb {
   composes: mainTitle2;
+  margin-left: 40px;
 }
 
 .h1 {
@@ -144,16 +155,29 @@ line-height: 24px;
   color: var(--text-light);
 }
 
+.address {
+  composes: bodyDefault;
+  color: white;
+}
+
+.space {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
 .breadcrumbpath {
   composes: bodyBold;
   color: #cecece !important;
   line-height: 36px;
+  margin-left: 40px;
 }
 
 .innercontainer {
-  margin-top: 180px;
+  margin-top: 25vh;
   overflow: scroll;
+  height: 75vh;
   background-color: var(--bg-dark);
+  -webkit-overflow-scrolling: touch;
 }
 
 .logincontainer {
@@ -232,17 +256,18 @@ line-height: 24px;
   box-sizing: border-box;
 }
 
-.icons8folder { 
+.icons8folder {
   display: inline-block;
   width: 26px;
   height: 26px;
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjYiIGhlaWdodD0iMjYiCnZpZXdCb3g9IjAgMCAyMTAgMjEwIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDIxMHYtMjEwaDIxMHYyMTB6IiBmaWxsPSJub25lIj48L3BhdGg+PGc+PGcgaWQ9InN1cmZhY2UxIj48cGF0aCBkPSJNMTc1LDUyLjVoLTc4Ljc1bC0xNy41LC0xNy41aC00My43NWMtOS42MjE1OCwwIC0xNy41LDcuODc4NDIgLTE3LjUsMTcuNXYzNWgxNzV2LTE3LjVjMCwtOS42MjE1OCAtNy44Nzg0MiwtMTcuNSAtMTcuNSwtMTcuNXoiIGZpbGw9IiNmZmEwMDAiPjwvcGF0aD48cGF0aCBkPSJNMTc1LDUyLjVoLTE0MGMtOS42MjE1OCwwIC0xNy41LDcuODc4NDIgLTE3LjUsMTcuNXY4Ny41YzAsOS42MjE1OCA3Ljg3ODQyLDE3LjUgMTcuNSwxNy41aDE0MGM5LjYyMTU4LDAgMTcuNSwtNy44Nzg0MiAxNy41LC0xNy41di04Ny41YzAsLTkuNjIxNTggLTcuODc4NDIsLTE3LjUgLTE3LjUsLTE3LjV6IiBmaWxsPSIjZmZjYTI4Ij48L3BhdGg+PC9nPjwvZz48L2c+PC9zdmc+') 50% 50% no-repeat;
-  background-size: 100%; 
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjYiIGhlaWdodD0iMjYiCnZpZXdCb3g9IjAgMCAyMTAgMjEwIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDIxMHYtMjEwaDIxMHYyMTB6IiBmaWxsPSJub25lIj48L3BhdGg+PGc+PGcgaWQ9InN1cmZhY2UxIj48cGF0aCBkPSJNMTc1LDUyLjVoLTc4Ljc1bC0xNy41LC0xNy41aC00My43NWMtOS42MjE1OCwwIC0xNy41LDcuODc4NDIgLTE3LjUsMTcuNXYzNWgxNzV2LTE3LjVjMCwtOS42MjE1OCAtNy44Nzg0MiwtMTcuNSAtMTcuNSwtMTcuNXoiIGZpbGw9IiNmZmEwMDAiPjwvcGF0aD48cGF0aCBkPSJNMTc1LDUyLjVoLTE0MGMtOS42MjE1OCwwIC0xNy41LDcuODc4NDIgLTE3LjUsMTcuNXY4Ny41YzAsOS42MjE1OCA3Ljg3ODQyLDE3LjUgMTcuNSwxNy41aDE0MGM5LjYyMTU4LDAgMTcuNSwtNy44Nzg0MiAxNy41LC0xNy41di04Ny41YzAsLTkuNjIxNTggLTcuODc4NDIsLTE3LjUgLTE3LjUsLTE3LjV6IiBmaWxsPSIjZmZjYTI4Ij48L3BhdGg+PC9nPjwvZz48L2c+PC9zdmc+")
+    50% 50% no-repeat;
+  background-size: 100%;
   margin-right: 14px;
 }
 
 .directoryrow {
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-items: flex-start;
@@ -252,24 +277,29 @@ line-height: 24px;
 }
 
 .flaticon::before {
-  font-family: 'Flaticons Solid';
+  font-family: "Flaticons Solid";
   content: "\E5B3";
-} 
+}
 
 @font-face {
-font-family: 'Flaticons Solid';
-src: url(/fonts/flaticons-solid.eot);
-src: url(/fonts/flaticons-solid.eot?#iefix) format("embedded-opentype"),url(/fonts/flaticons-solid.woff) format('woff'),url(/fonts/flaticons-solid.ttf) format('truetype'),url(/fonts/flaticons-solid.svg#flaticons-solid) format('svg');
-font-weight: 400;
-font-style: normal
+  font-family: "Flaticons Solid";
+  src: url(/fonts/flaticons-solid.eot);
+  src: url(/fonts/flaticons-solid.eot?#iefix) format("embedded-opentype"),
+    url(/fonts/flaticons-solid.woff) format("woff"),
+    url(/fonts/flaticons-solid.ttf) format("truetype"),
+    url(/fonts/flaticons-solid.svg#flaticons-solid) format("svg");
+  font-weight: 400;
+  font-style: normal;
 }
 
 .flaticon.solid:before {
-font-family: 'Flaticons Solid'
+  font-family: "Flaticons Solid";
 }
 
-.flaticon.solid.A1:before,.flaticon.solid.grid-1:before,.flaticon.solid.grid:before {
-content: "\E000"
+.flaticon.solid.A1:before,
+.flaticon.solid.grid-1:before,
+.flaticon.solid.grid:before {
+  content: "\E000";
 }
 
 /* User */
@@ -278,12 +308,12 @@ content: "\E000"
   flex-direction: row;
   align-items: center;
   margin-bottom: 20px;
+  margin: 30px 40px 20px 40px;
 }
 
 .handlebalance {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
   align-items: flex-start;
 }
 
@@ -300,5 +330,10 @@ content: "\E000"
 
 .balance {
   composes: smallBold;
+  color: var(--fds-blue);
+}
+
+.bigbalance {
+  composes: mainTitle2;
   color: var(--fds-blue);
 }
