@@ -8,19 +8,17 @@ import PropTypes from "prop-types";
 import { getDirectoryList } from "services/filebrowser/selectors";
 import { fetchDirectoryList } from "services/filebrowser/actions";
 
-function Files({
-  directoryList, fetchDirectoryList, dirId
-}) {
+function Files({ directoryList, fetchDirectoryList, dirId, match }) {
   useEffect(() => {
-    fetchDirectoryList(dirId)
-  }, [])
+    fetchDirectoryList(dirId);
+  }, []);
   return (
     <div className={styles.container}>
       <div className={styles.topbar}>
         <NavLink to="/w">
           <div className={styles.myaccount}>
             <div className={styles.handlebalance}>
-              <div className={styles.handle}>KarsRhyder</div>
+              <div className={styles.handle}>Kars</div>
               <div className={styles.balance}>124.21 FDT</div>
             </div>
           </div>
@@ -41,9 +39,7 @@ function Files({
       </div>
     </div>
   );
-};
-
-
+}
 
 Files.propTypes = {
   directoryList: PropTypes.array.isRequired
@@ -53,14 +49,13 @@ const mapStateToProps = (_, ownProps) => {
   const { dirId } = (ownProps.match || {}).params || {};
   return createStructuredSelector({
     dirId: () => dirId,
-    directoryList: dirId => getDirectoryList(dirId),
+    directoryList: dirId => getDirectoryList(dirId)
   });
 };
 
 const mapDispatchToProps = {
   fetchDirectoryList
 };
-
 
 // const mapStateToProps = createStructuredSelector({
 //   directoryList: getDirectoryList,
@@ -70,7 +65,6 @@ const mapDispatchToProps = {
 // const mapDispatchToProps = dispatch => ({
 //   getDirectoryList: () => dispatch({ type: "FETCH_DIRECTORY_LIST" })
 // });
-
 
 export default connect(
   mapStateToProps,

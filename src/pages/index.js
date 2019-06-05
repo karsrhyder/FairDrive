@@ -3,6 +3,7 @@ import Directory from "./Files/Directory";
 import Account from "./Account/AccountRoot";
 import Register from "./Account/RegisterRoot";
 import Wallet from "./Account/WalletRoot";
+import PutioToken from "./Account/PutioToken";
 
 export default [
   { path: "/", exact: true, component: Account },
@@ -10,5 +11,5 @@ export default [
   { path: "/r", exact: true, component: Register },
   { path: "/w", exact: true, component: Wallet },
   { path: "/d/:dirId", component: Files },
-  { path: "/cb/:putIo", component: Account }
+  { path: "/t:tokenId", component: PutioToken }
 ];

@@ -3,10 +3,10 @@ import styles from "styles.module.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
-
 //const putiourl = 'https://api.put.io/v2/oauth2/authenticate?client_id=4051&response_type=token&redirect_uri=https://fairdrive.netlify.com/putio';
 
-const putiourl = 'https://api.put.io/v2/oauth2/authenticate?client_id=4051&response_type=token&redirect_uri=http://localhost:3000/t/';
+const putiourl =
+  "https://api.put.io/v2/oauth2/authenticate?client_id=4051&response_type=token&redirect_uri=http://localhost:3000/t";
 
 class Register extends React.Component {
   render() {
@@ -53,6 +53,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Register);
-
-
-
