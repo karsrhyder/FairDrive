@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 
 // Not needed, history.js specifies the use of Hash.
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 // Redux imports
 import store from "./store";
 import App from "./App";

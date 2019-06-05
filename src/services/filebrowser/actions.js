@@ -1,8 +1,14 @@
 import * as t from "./actionTypes";
 
-// Service > user
+console.log("actions")
 
-export const updateWeb3Instance = userAddress => ({
-  type: t.UPDATE_USER_ADDRESS,
-  userAddress
+// Service > user
+export const fetchDirectoryList = dirId => ({
+  type: t.FETCH_DIRECTORY_LIST,
+  dirId
 });
+
+export const updateDirectoryList = directoryList => ({
+  type: t.UPDATE_DIRECTORY_LIST,
+  data: directoryList
+})

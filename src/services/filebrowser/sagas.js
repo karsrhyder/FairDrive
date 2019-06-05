@@ -1,10 +1,29 @@
-// import { put, call, fork } from "redux-saga/effects";
-// import * as a from "./actions";
+import { put, call, select, takeEvery } from "redux-saga/effects";
+import * as a from "./actions";
+import * as t from "./actionTypes";
 
-// Service > user
+import getDirectoryList from "./fetchFunctions/getDirectoryList";
 
-/******************************* Watchers *************************************/
+console.log("sagas")
 
-export default function*() {
-  // yield fork(setInitialWeb3Instance);
+function* fetchDirectoryList({ dirId }) {
+  try {
+    const directoryList = yield call(getDirectoryList, { dirId });
+
+    console.log("sagas dirlist:", directoryList)
+    console.log('fetchung dir', dirId);
+
+    yield put(a.updateDirectoryList(directoryList));
+    console.log("Saga starging DirectoryList", directoryList);
+    return directoryList;
+
+  }
+  catch (e) {
+    console.error(`Error on fetchHashtagSaga: ${e.stack}`);
+  }
+}
+
+
+export default function* () {
+  yield takeEvery(t.FETCH_DIRECTORY_LIST, fetchDirectoryList);
 }

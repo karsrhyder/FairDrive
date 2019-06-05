@@ -2,10 +2,12 @@ import { mountPoint } from "./";
 import { createSelector } from "reselect";
 
 // Service > filebrowser''
+console.log('selector', mountPoint)
+
 
 export const getDirectoryList = createSelector(
     state => state[mountPoint],
-    directories => directories.directoryList
+    directoryList => directoryList
 );
 
 export const getDirectories = createSelector(

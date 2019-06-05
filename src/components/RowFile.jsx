@@ -5,6 +5,12 @@ export default class RowFile extends React.Component {
   componentWillMount() { }
   componentHasMounted() { }
   render() {
-    return <div className={styles.rowfile}>{this.props.item.dirName}</div>;
+    return <div className={styles.rowfile}>
+      <img src={this.props.item.icon}></img>
+
+      <div className={styles.dirName}>{this.props.item.name}</div>
+
+
+    </div>
   }
 }

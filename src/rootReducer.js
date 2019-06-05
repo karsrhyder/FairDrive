@@ -13,18 +13,25 @@ const initialState = {
           mimeType: 'JPEG'
         }
       }
+    },
+    '0x2': {
+      dirName: 'Images',
+      metaHash: '0x...',
+      items: {
+        '0': {
+          itemName: 'File 2.jpg',
+          fileSize: 12233,
+          mimeType: 'JPEG'
+        }
+      }
     }
   },
-  directoryList: [
-    {
-      dirName: 'DappData',
-      metaHash: '0x...'
-    },
-    {
-      dirName: 'Images',
-      metaHash: '0x...'
-    }
-  ]
+  directoryList: [],
+  idInfo: {
+    idString: "KarsDrive-1",
+    balanceEth: 1000000000000000000,
+    balanceFdt: 20000000000000000000
+  }
 };
 
 const globalReducer = (state = initialState, action) => {

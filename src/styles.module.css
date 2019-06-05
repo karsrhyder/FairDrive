@@ -4,12 +4,13 @@
   --border-line: #222222;
   --bg-dark: #222222;
   --bg-shade: #333333;
-  --text-light: white;
+  --text-light: #cecece;
   --text-title: #efd96f;
   --text-shade: #ffa000;
   --fds-yellow: #efd96f;
   --fds-blue: #24b1ff;
   --fds-dark: #333333;
+
 }
 
 body {
@@ -134,7 +135,6 @@ a {
 
 .brand {
   composes: mainTitle2;
-  margin-left: 40px;
   margin-top: 120px;
 }
 
@@ -147,7 +147,6 @@ a {
 /* Files */
 .breadcrumb {
   composes: mainTitle2;
-  margin-left: 40px;
 }
 
 .h1 {
@@ -168,8 +167,6 @@ a {
 .breadcrumbpath {
   composes: bodyBold;
   color: #cecece !important;
-  line-height: 36px;
-  margin-left: 40px;
 }
 
 .innercontainer {
@@ -250,10 +247,25 @@ a {
 }
 
 .rowfile {
-  composes: bodyBold;
-  color: var(--text-light);
+  display: grid;
+  grid-template-columns:  min-content auto;
+  grid-gap: 20px;
   width: 100vw;
   box-sizing: border-box;
+  align-items: center;
+}
+
+.rowfile img {
+  width: 24px;
+  height: 24px;
+}
+
+.dirName {
+  composes: bodyBold;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  color: var(--text-light);
 }
 
 .icons8folder {
@@ -269,11 +281,10 @@ a {
 .directoryrow {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-items: flex-start;
-  padding: 20px 40px 20px 40px;
   background-color: var(--bg-dark);
   border-bottom: 1px solid var(--bg-shade);
+  padding: 20px 40px;
+
 }
 
 .flaticon::before {
@@ -302,13 +313,17 @@ a {
   content: "\E000";
 }
 
+.location {
+  padding: 0px 40px;
+  margin: 0px;
+}
+
 /* User */
 .myaccount {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 20px;
-  margin: 30px 40px 20px 40px;
+  padding: 30px 0px 10px 40px;
 }
 
 .handlebalance {
