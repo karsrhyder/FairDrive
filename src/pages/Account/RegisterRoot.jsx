@@ -3,11 +3,6 @@ import styles from "styles.module.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
-//const putiourl = 'https://api.put.io/v2/oauth2/authenticate?client_id=4051&response_type=token&redirect_uri=https://fairdrive.netlify.com/putio';
-
-const putiourl =
-  "https://api.put.io/v2/oauth2/authenticate?client_id=4051&response_type=token&redirect_uri=http://localhost:3000/t";
-
 class Register extends React.Component {
   render() {
     return (
@@ -24,9 +19,7 @@ class Register extends React.Component {
             <input type="text" placeholder="Handle" />
             <input type="password" placeholder="Password" />
             <input type="password" placeholder="Password check" />
-            <a href={putiourl}>
-              <div className={styles.button}>Register</div>
-            </a>
+            <div className={styles.button}>Register</div>
             <NavLink to="/" className={styles.createnew}>
               <div>Unlock FairDrive</div>
             </NavLink>

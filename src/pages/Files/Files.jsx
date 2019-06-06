@@ -41,6 +41,22 @@ function Files({ directoryList, fetchDirectoryList, dirId, match }) {
   );
 }
 
+function getToken() {
+  var xhr = new XMLHttpRequest();
+  xhr.open(
+    "POST",
+    "https://api.put.io/v2/oauth2/authenticate?client_id=4051&response_type=token&redirect_uri=http://localhost:3000/t"
+  );
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      alert("User's name is " + xhr.responseText);
+    } else {
+      alert("Request failed.  Returned status of " + xhr.status);
+    }
+  };
+  xhr.send();
+}
+
 Files.propTypes = {
   directoryList: PropTypes.array.isRequired
 };

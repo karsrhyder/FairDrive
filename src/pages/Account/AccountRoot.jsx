@@ -21,6 +21,12 @@ class Account extends React.Component {
             <NavLink to="/r" className={styles.createnew}>
               <div>Create new FairDrive</div>
             </NavLink>
+            <a
+              className={styles.createnew}
+              href="https://api.put.io/v2/oauth2/authenticate?client_id=4051&response_type=token&redirect_uri=http://localhost:3000/t/"
+            >
+              Authenticate with Put.io
+            </a>
           </div>
         </div>
       </div>
@@ -28,19 +34,4 @@ class Account extends React.Component {
   }
 }
 
-const mapStateToProps = (_, ownProps) => {
-  const { directory } = (ownProps.match || {}).params || {};
-  // return createStructuredSelector({
-  //   directory: () => directory,
-  //   directories: state => getDirectories(state, directory),
-  // });
-};
-
-const mapDispatchToProps = dispatch => ({
-  //addHashtag: name => dispatch({ type: "ADD_HASHTAG", hashtag: { name } })
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Account);
+export default connect()(Account);

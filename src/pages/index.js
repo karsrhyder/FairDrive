@@ -7,9 +7,9 @@ import PutioToken from "./Account/PutioToken";
 
 export default [
   { path: "/", exact: true, component: Account },
+  { path: "/t", component: PutioToken },
   { path: "/f", exact: true, component: Files },
   { path: "/r", exact: true, component: Register },
   { path: "/w", exact: true, component: Wallet },
-  { path: "/d/:dirId", component: Files },
-  { path: "/t:tokenId", component: PutioToken }
+  { path: "/d/:dirId", component: Files }
 ];
