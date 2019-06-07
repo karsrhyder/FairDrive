@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, match } from "react-router-dom";
 import styles from "styles.module.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
@@ -9,11 +9,10 @@ import PropTypes from "prop-types";
 import { getDirectoryList } from "services/filebrowser/selectors";
 import { fetchDirectoryList } from "services/filebrowser/actions";
 
-function Files({ directoryList, fetchDirectoryList, dirId, match, location }) {
+function Files({ directoryList, fetchDirectoryList, dirId, match }) {
   useEffect(
-    match => {
-      fetchDirectoryList(match);
-      console.log({ location }, dirId);
+    dirId => {
+      fetchDirectoryList(match.params.dirId);
     },
     [match]
   );
@@ -35,11 +34,11 @@ function Files({ directoryList, fetchDirectoryList, dirId, match, location }) {
       </div>
       <div className={styles.innercontainer}>
         {directoryList.map(item => (
-          <div onClick={() => changeDirectoryList(item.id)} key={item.id}>
+          <NavLink to={"/d/" + item.id} key={item.id}>
             <div className={styles.directoryrow}>
               <RowFile item={item} key={item.id} />
             </div>
-          </div>
+          </NavLink>
         ))}
       </div>
     </div>
@@ -49,12 +48,6 @@ function Files({ directoryList, fetchDirectoryList, dirId, match, location }) {
 Files.propTypes = {
   directoryList: PropTypes.array.isRequired
 };
-
-function changeDirectoryList(_dirId) {
-  console.log(_dirId);
-  fetchDirectoryList(_dirId);
-  Redirect;
-}
 
 const mapStateToProps = (_, ownProps) => {
   const { dirId } = (ownProps.match || {}).params || {};
