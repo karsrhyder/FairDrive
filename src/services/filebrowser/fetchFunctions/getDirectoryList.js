@@ -15,9 +15,18 @@ export default async function getDirectoryList({ dirId }) {
   //             .Info()
   //             .then(res => console.log('Res: ', res.data.info)
   //                 .catch(err => console.log('Error occured while fetching user info: ', err))
-  const directoryList = await Api.Files.Query(dirId, {});
+  const res = await Api.Files.Query(dirId, {});
+  //const directoryList = res.body.files;
 
-  // treat data HERE!!
+  console.log(res);
+  const directoryMeta = res.body.parent;
 
-  return directoryList.data.files;
+  const directoryList = {
+    files: res.body.files,
+    meta: directoryMeta
+  };
+
+  console.log(directoryList);
+
+  return directoryList;
 }

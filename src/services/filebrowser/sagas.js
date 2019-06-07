@@ -4,17 +4,13 @@ import * as t from "./actionTypes";
 
 import getDirectoryList from "./fetchFunctions/getDirectoryList";
 
-console.log("sagas");
-
 function* fetchDirectoryList({ dirId }) {
   try {
-    const directoryList = yield call(getDirectoryList, { dirId });
-
-    console.log("sagas dirlist:", directoryList);
-    console.log("fetchung dir", dirId);
+    const directoryList = yield call(getDirectoryList, {
+      dirId
+    });
 
     yield put(a.updateDirectoryList(directoryList));
-    console.log("Saga starging DirectoryList", directoryList);
     return directoryList;
   } catch (e) {
     console.error(`Error on fetchGetDirSaga: ${e.stack}`);

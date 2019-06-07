@@ -25,7 +25,7 @@ class Account extends React.Component {
             </NavLink>
             <a
               className={styles.createnew}
-              href="https://api.put.io/v2/oauth2/authenticate?client_id=4051&response_type=token&redirect_uri=http://localhost:3000/t/"
+              href="https://api.put.io/v2/oauth2/authenticate?client_id=4051&response_type=token&redirect_uri=https://fairdrive.netlify.com/t/"
             >
               Authenticate with Put.io
             </a>
