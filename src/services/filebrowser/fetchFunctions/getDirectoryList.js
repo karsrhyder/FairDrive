@@ -2,7 +2,7 @@ import PutioAPI from "@putdotio/api-client";
 
 export default async function getDirectoryList({ dirId }) {
   console.log(localStorage.getItem("putiotoken"));
-  console.log({ dirId });
+  //console.log({ dirId });
   window.putApi = new PutioAPI({
     clientID: "4051",
     token: localStorage.getItem("putiotoken")

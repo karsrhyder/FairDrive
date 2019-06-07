@@ -8,7 +8,9 @@ class Account extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.topbar}>
-          <div className={styles.brand}>FairDrive / </div>
+          <div className={styles.location}>
+            <div className={styles.brand}>FairDrive / </div>
+          </div>
         </div>
         <div className={styles.innercontainer}>
           <div className={styles.register}>
